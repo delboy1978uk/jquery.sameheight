@@ -4,7 +4,8 @@
             {
                 var defaults =
                 {
-                    resize: 'tallest'
+                    resize: 'tallest',
+                    log: false
                 };
 
                 options = $.extend(defaults,options);
@@ -14,6 +15,10 @@
                 this.each(function() {
 
                     var height = $(this).height();
+                    if(options.log == true)
+                    {
+                        console.log($(this).attr('id') + 'height = ' + height);
+                    }
                     if (options.resize == 'tallest') {
                         if (height > targetHeight) {
                             targetHeight = height;
@@ -25,6 +30,10 @@
                         }
                     }
                 });
+                if(options.log == true)
+                {
+                    console.log('Target height = ' + targetHeight);
+                }
                 this.each(function() {
                     $(this).css({height: targetHeight});
                 });
