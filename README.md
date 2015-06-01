@@ -8,5 +8,6 @@ $('.class-to-same-heightify').sameHeight();
 Options
 -------
 ```javascript
-resize: 'tallest' (default) or shortest
+resize: 'tallest' // (default) or 'shortest'
+log: false // (default) or true. Log to the console.
 ```
